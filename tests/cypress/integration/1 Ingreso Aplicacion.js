@@ -1,11 +1,11 @@
 describe('Pruebas escenario ingreso aplicación', () => {
     beforeEach(()=>{
         cy.clearCookies()
-        cy.visit('http://localhost:2371/ghost')
+        cy.visit('http://localhost:2368/ghost/')
         cy.wait(7000)
     })
 
-    it('Test Registrar usuario', () => {
+    it('Prueba Registrar usuario', () => {
       cy.get('main').then(($main) => {
         if($main.find('form').length == 0){
           createUser(cy)
@@ -15,7 +15,7 @@ describe('Pruebas escenario ingreso aplicación', () => {
       })
     })
     
-    it('Test Ingreso aplicación exitoso', () => {
+    it('Prueba Ingreso aplicación exitoso', () => {
         cy.get('main').then(($main) => {
           if($main.find('form').length > 0){
             if($main.find('form')[0].id == 'login') {
@@ -26,7 +26,7 @@ describe('Pruebas escenario ingreso aplicación', () => {
         })
     })
 
-    it('Test Ingreso aplicación email erroneo', () => {
+    it('Prueba Ingreso aplicación email erroneo', () => {
       cy.get('main').then(($main) => {
         if($main.find('form').length > 0){
           if($main.find('form')[0].id == 'login') {
@@ -37,7 +37,7 @@ describe('Pruebas escenario ingreso aplicación', () => {
       })
     })
 
-    it('Test Ingreso aplicación password erroneo', () => {
+    it('Prueba Ingreso aplicación password erroneo', () => {
       cy.get('main').then(($main) => {
         if($main.find('form').length > 0){
           if($main.find('form')[0].id == 'login') {
@@ -48,7 +48,7 @@ describe('Pruebas escenario ingreso aplicación', () => {
       })
     })
 
-    it('Test Ingreso aplicación forgot password', () => {
+    it('Prueba Ingreso aplicación forgot password', () => {
       cy.get('main').then(($main) => {
         if($main.find('form').length > 0){
           if($main.find('form')[0].id == 'login') {

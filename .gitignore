@@ -1,4 +1,4 @@
 node_modules/
 test-results/
 playwright-report/
-test/cypress/videos
+test/cypress/videos/*.mp4
